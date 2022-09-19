@@ -96,7 +96,7 @@ list interview__id s01q00b_autre if (s01q00b==14)
 * Identifier des valeurs manquantes
 * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
-check_if_miss s01q00d if (preload_pid==. && s00q07d==1)
+check_if_miss s01q00d if (preload_pid==. & s00q07d==1)
 
 * ----------------------------------------------------------------------------
 * VARIABLE : s01q01 
@@ -649,7 +649,7 @@ true
 * Identifier des valeurs manquantes
 * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
-check_if_miss s01q04a if (s01q00a!=2 && s01q03c==9999)
+check_if_miss s01q04a if (s01q00a!=2 & s01q03c==9999)
 
 * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 * Valider les réponses
@@ -815,7 +815,7 @@ true
 * Identifier des valeurs extrêmes
 * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
-lister_vals_extremes s01q04a if (s01q00a!=2 && s01q03c==9999)
+lister_vals_extremes s01q04a if (s01q00a!=2 & s01q03c==9999)
 
 * ----------------------------------------------------------------------------
 * VARIABLE : s01q04b 
