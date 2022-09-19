@@ -30,6 +30,9 @@ Exécuter les programmes d'apurement
 01 - Apurer les données
 -----------------------------------------------------------------------------*/
 
+* section 0
+di "$progs/s00-identifiants-resultat.do"
+
 * section 1: composition du ménage
 do "$progs/s01-membres.do"
 
