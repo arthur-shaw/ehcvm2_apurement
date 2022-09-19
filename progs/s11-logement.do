@@ -5,7 +5,7 @@ log using "$proj_dir/s11.log", replace
 * ============================================================================
 
 * charger les données
-use "$raw_menage/s11", clear
+use "$raw_menage/$s11", clear
 
 * ne retenir que les observations d'intérêt
 keep if inlist(s00q08, 1, 2)
