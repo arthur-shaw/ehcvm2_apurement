@@ -31,7 +31,12 @@ keep if ((AgeAnnee >= 3) & (`membre_du_menage'))
 * Identifier des valeurs manquantes
 * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
-check_if_miss s02q01 
+qui: d s02q01__*, varlist
+local s02q01_vars = r(varlist)
+
+foreach s02q01_var of local s02q01_vars {
+    check_if_miss `s02q01_var' 
+}
 
 * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 * Valider les réponses
