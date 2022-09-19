@@ -29,7 +29,14 @@ global clean_menage "$clean/menage/"
 global clean_comm   "$clean/communautaire/"
 
 * ----------------------------------------------------------------------------
-* Fichiers
+* Fichiers SuSo
+* ----------------------------------------------------------------------------
+
+global menages "menage.dta"
+global membres "membres.dta"
+
+* ----------------------------------------------------------------------------
+* Fichiers harmonisés
 * ----------------------------------------------------------------------------
 
 global s00 "s00_me_`pays'_2021.dta" 
@@ -80,4 +87,12 @@ global s20c "s20c_me_`pays'_2021.dta"
 * Variables clé
 * ----------------------------------------------------------------------------
 
-global vars_cle "s00q01 s00q04 s00q08"
+global vars_cle_menage "interview__key interview__id grappe id_menage vague s00q01 s00q04 s00q07d s00q08"
+global vars_cle_membre "interview__key interview__id membres__id s01q00_a s02q00a s03q00a s04q00a s05q00a s06q00a s07aq00a s01q00a preload_pid s01q12 s01q13 AgeAnnee"
+
+* ----------------------------------------------------------------------------
+* Fichiers de variables clé
+* ----------------------------------------------------------------------------
+
+global menages_cle "menages_info_cle.dta"
+global membres_cle "membres_info_cle.dta"
