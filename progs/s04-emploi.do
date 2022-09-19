@@ -107,13 +107,15 @@ lister_vals_extremes s04q02b
 * Identifier des valeurs manquantes
 * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
-check_if_miss s04q02c 
+* NB: variable manquante en GNB
+capture check_if_miss s04q02c 
 
 * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 * Identifier des valeurs extrêmes
 * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
-lister_vals_extremes s04q02c 
+* NB: variable manquante en GNB
+capture lister_vals_extremes s04q02c 
 
 
 * ----------------------------------------------------------------------------
