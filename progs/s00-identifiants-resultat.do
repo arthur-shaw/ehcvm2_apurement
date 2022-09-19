@@ -359,29 +359,6 @@ check_if_miss s00q22
     s00q22.InRange(1,10) 
     -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   */     
 
-* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-* Identifier des valeurs extrêmes
-* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-
-lister_vals_extremes s00q22 
-
-
-* ----------------------------------------------------------------------------
-* VARIABLE : visite1 
-* ÉTIQUETTE : ENQUETEUR: VEUILLEZ COCHEZ LA PREMIERE VISITE<font>
-* TYPE : Catégorielle: à réponse unique
-* MODALITÉS : 
-*   1   1ère visite
-*   2   2ième visite
-*   3   3ième visite
-* ----------------------------------------------------------------------------
-
-* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-* Identifier des valeurs manquantes
-* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-
-check_if_miss visite1 if (s00q22>=1)
-
 
 * ----------------------------------------------------------------------------
 * VARIABLE : s00q23a 
@@ -395,24 +372,7 @@ check_if_miss visite1 if (s00q22>=1)
 * Identifier des valeurs manquantes
 * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
-check_if_miss s00q23a if (visite1==1)
-
-
-* ----------------------------------------------------------------------------
-* VARIABLE : visite2 
-* ÉTIQUETTE : ENQUETEUR: VEUILLEZ COCHEZ LA DEUXIEME VISITE<font>
-* TYPE : Catégorielle: à réponse unique
-* MODALITÉS : 
-*   1   1ère visite
-*   2   2ième visite
-*   3   3ième visite
-* ----------------------------------------------------------------------------
-
-* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-* Identifier des valeurs manquantes
-* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-
-check_if_miss visite2 if (visite1==1 & & !mi(s00q23b))
+check_if_miss s00q23a if (!mi(s00q22) & s00q22>=1)
 
 
 * ----------------------------------------------------------------------------
@@ -427,24 +387,7 @@ check_if_miss visite2 if (visite1==1 & & !mi(s00q23b))
 * Identifier des valeurs manquantes
 * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
-check_if_miss s00q24a if (visite2==2)
-
-
-* ----------------------------------------------------------------------------
-* VARIABLE : visite3 
-* ÉTIQUETTE : ENQUETEUR: VEUILLEZ COCHEZ LA TROISIEME VISITE<font>
-* TYPE : Catégorielle: à réponse unique
-* MODALITÉS : 
-*   1   1ère visite
-*   2   2ième visite
-*   3   3ième visite
-* ----------------------------------------------------------------------------
-
-* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-* Identifier des valeurs manquantes
-* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-
-check_if_miss visite3 if (!mi(s00q24b))
+check_if_miss s00q24a if (!mi(s00q22) & s00q22>=2)
 
 
 * ----------------------------------------------------------------------------
@@ -459,7 +402,7 @@ check_if_miss visite3 if (!mi(s00q24b))
 * Identifier des valeurs manquantes
 * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
-check_if_miss s00q25a if (visite3==3)
+check_if_miss s00q25a if (!mi(s00q22) & s00q22>=3)
 
 
 * ----------------------------------------------------------------------------
@@ -524,23 +467,4 @@ check_if_miss s00q27
 
 
 
-* ----------------------------------------------------------------------------
-* VARIABLE : observation 
-* ÉTIQUETTE : Enquêteur: Veuillez enregistrer vos observations éventuelles
-* TYPE : Texte
-* MODALITÉS : 
-*   N/A
-* ----------------------------------------------------------------------------
-
-* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-* Identifier des valeurs manquantes
-* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-
-check_if_miss observation 
-
-* ============================================================================
-* Sauvegarder le résultat
-* ============================================================================
-
-save "$clean_menage/$s00", replace
 log close
