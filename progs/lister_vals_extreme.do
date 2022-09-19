@@ -34,9 +34,9 @@ else if (`"`if'"' != "") {
 }
 
 * compose conditions for identifying extreme values
-local extreme_condit "((`varname' <= _pct_inf) | (`varname' >= _pct_sup & !mi(_pct_sup))) & !mi(`varname') & (varname != `exclure')"
+local extreme_condit "((`varname' <= _pct_inf) | (`varname' >= _pct_sup & !mi(_pct_sup))) & !mi(`varname') & (`varname' != `exclure')"
 local lower_condit "(`varname' <= _pct_inf & !mi(`varname')) & (`varname' != `exclure')"
-local upper_condit "(`varname' >= _pct_sup & !mi(_pct_sup)) & !mi(`varname') & (varname != `exclure')"
+local upper_condit "(`varname' >= _pct_sup & !mi(_pct_sup)) & !mi(`varname') & (`varname' != `exclure')"
 
 * count extreme values and message about them
 if "`by'" != "" {
