@@ -9,7 +9,7 @@ local pays ""
 * Définir les répertoires et fichiers
 * ============================================================================
 
-do "$proj_dir/progs/parametrage.do"
+include "$proj_dir/progs/parametrage.do"
 
 /*=============================================================================
 Charger les fonctions de service
