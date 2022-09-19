@@ -16,6 +16,31 @@ keep if inlist(s00q08, 1, 2)
 * ============================================================================
 
 * ----------------------------------------------------------------------------
+* VARIABLE : interview__id, interview__key
+* ----------------------------------------------------------------------------
+
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+* Identifier des valeurs manquantes
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+check_if_miss interview__id
+check_if_miss interview__key
+
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+* Identifier des doublons
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+capture isid interview__id interview__key
+if _rc != 0 {
+
+    di as error "ERREUR: Doublons dans les identifiants de SuSo: interview__id, interview__key"
+    duplicates list interview__id interview__key
+    duplicates report interview__id, interview__key
+    error 1
+
+}
+
+* ----------------------------------------------------------------------------
 * VARIABLE : grappe 
 * ÉTIQUETTE : grappe
 * TYPE : Numerique, entier
@@ -69,9 +94,14 @@ check_if_miss vague
 capture isid grappe id_menage vague
 if _rc != 0 {
 
-    di as error "ERROR: Il y a des doublons"
-    duplicates grappe id_menage vague
+    di as error "ERROR: Doublons identifiés pour les identifiants censés être uniques: grappe id_menage vague"
     duplicates list grappe id_menage vague, sepby(grappe id_menage vague)
+    duplicates report grappe id_menage vague
+    * error 1
+    
+    * pour le moment, purger les doublons afin de continuer
+    duplicates drop grappe id_menage vague, force
+
 
 }
 
