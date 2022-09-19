@@ -5,8 +5,6 @@
 * charger les données
 use "$raw_menage/$s04a", clear
 merge 1:1 interview__id interview__key using "$raw_menage/membres.dta", keepusing(AgeAnnee) keep(1 3) nogen
-merge 1:1 interview__id interview__key using "$raw_menage/$s04b", nogen
-merge 1:1 interview__id interview__key using "$raw_menage/$s04c", nogen
 merge 1:1 interview__id interview__key using "$raw_menage/$s04b", nogen keep(1 3)
 merge 1:1 interview__id interview__key using "$raw_menage/$s04c", nogen keep(1 3)
 
@@ -1422,3 +1420,34 @@ s04q50==2:
 true
  
     -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   */     
+
+
+* ============================================================================
+* Sauvegarder le résultat
+* ============================================================================
+
+local s4_id_vars "interview__key interview__id grappe id_menage vague s04q00a s04q00b"
+
+* section 4a
+preserve
+
+    keep `s4_id_vars' s04q00_0 - s04q28b
+    save "$clean_menage/$s04a", replace
+
+restore
+
+* section 4b
+preserve
+
+    keep `s4_id_vars' s04q29a - s04q50b
+    save "$clean_menage/$s04b", replace
+
+restore
+
+* section 4c
+preserve
+
+    keep `s4_id_vars' s04q51a - s04q50b s04q64_controle__*
+    save "$clean_menage/$s04b", replace
+
+restore

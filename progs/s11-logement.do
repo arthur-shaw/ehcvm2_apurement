@@ -1293,3 +1293,10 @@ di as result "Variable -s11q59_autre- a `n_oth' valeurs autre"
 
 * identifier des opportunités de reclasser
 list interview__id s11q59_autre if (s11q59==5)
+
+
+* ============================================================================
+* Sauvegarder le résultat
+* ============================================================================
+
+save "$clean_menage/$s11", replace
