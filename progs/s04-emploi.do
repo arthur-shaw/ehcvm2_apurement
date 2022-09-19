@@ -1,3 +1,5 @@
+capture log using "$proj_dir/s04.log", replace
+
 * ============================================================================
 * Préparer les données
 * ============================================================================
@@ -1451,3 +1453,5 @@ preserve
     save "$clean_menage/$s04b", replace
 
 restore
+
+log close
