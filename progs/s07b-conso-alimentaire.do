@@ -5,7 +5,8 @@ log using "$proj_dir/s07b.log", replace
 * ============================================================================
 
 * charger les données
-use "$raw_menage/$s07b", clear
+use "$clean_menage/$menages_cle", clear
+merge 1:m interview__id interview__key using "$raw_menage/$s07b", keep(1 3) nogen
 
 * ne retenir que les observations d'intérêt
 keep if inlist(s00q08, 1, 2)
