@@ -5,8 +5,9 @@ capture log using "$proj_dir/s02.log", replace
 * ============================================================================
 
 * charger les données
-use "$raw_menage/$s02", clear
-merge 1:1 interview__id interview__key using "$raw_menage/membres.dta", keepusing(AgeAnnee) keep(1 3) nogen
+use "$clean_menage/$menages_cle", clear
+merge 1:m interview__id interview__key using "$clean_menage/$membres_cle", keep(1 3) nogen
+merge 1:1 interview__id interview__key s02q00a using "$raw_menage/$s02", keep(1 3) nogen
 
 * ne retenir que les observations d'intérêt
 keep if inlist(s00q08, 1, 2)
