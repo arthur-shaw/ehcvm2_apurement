@@ -328,7 +328,7 @@ check_if_miss s04q09
 * Identifier des valeurs manquantes
 * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
-check_if_miss s04q11 
+check_if_miss s04q11 if (s04q10 == 0)
 
 
 * ----------------------------------------------------------------------------
@@ -396,6 +396,34 @@ check_if_miss s04q17 if (s04q14==2)
 
 
 * ----------------------------------------------------------------------------
+* Condition pour 4B
+* ----------------------------------------------------------------------------
+
+#delim;
+local condit_4b "
+(
+(s04q06 == 1 | s04q07 == 1 | s04q08 == 1 | s04q09 == 1)
+
+|
+
+!mi(s04q12)
+
+|
+
+!mi(s04q15)
+
+|
+
+(!mi(s04q28a) | !mi(s04q28b))
+)
+
+&
+
+($membre_du_menage)
+";
+#delim cr
+
+* ----------------------------------------------------------------------------
 * VARIABLE : s04q30a 
 * ÉTIQUETTE : 4.30a. Quelle est  l'activité de l'entreprise dans laquelle   [NOM]  a exercé son emploi ou quels produits (services) fabrique (fournit) t-elle?
 * TYPE : Texte
@@ -407,7 +435,7 @@ check_if_miss s04q17 if (s04q14==2)
 * Identifier des valeurs manquantes
 * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
-check_if_miss s04q30a 
+check_if_miss s04q30a if (`condit_4b')
 
 * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 * Valider les réponses
@@ -454,7 +482,7 @@ check_if_miss s04q30a
 * Identifier des valeurs manquantes
 * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
-check_if_miss s04q30b 
+check_if_miss s04q30b if (`condit_4b')
 
 
 * ----------------------------------------------------------------------------
@@ -556,7 +584,7 @@ check_if_miss s04q30b
 * Identifier des valeurs manquantes
 * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
-check_if_miss s04q30c 
+check_if_miss s04q30c if (`condit_4b') 
 
 
 * ----------------------------------------------------------------------------
@@ -868,7 +896,7 @@ check_if_miss s04q30c
 * Identifier des valeurs manquantes
 * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
-check_if_miss s04q30d 
+check_if_miss s04q30d if (`condit_4b') 
 
 
 * ----------------------------------------------------------------------------
@@ -888,7 +916,7 @@ check_if_miss s04q30d
 * Identifier des valeurs manquantes
 * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
-check_if_miss s04q31 
+check_if_miss s04q31 if (`condit_4b') 
 
 
 * ----------------------------------------------------------------------------
@@ -903,7 +931,7 @@ check_if_miss s04q31
 * Identifier des valeurs manquantes
 * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
-check_if_miss s04q32 
+check_if_miss s04q32 if (`condit_4b') 
 
 * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 * Valider les réponses
@@ -921,7 +949,7 @@ check_if_miss s04q32
 * Identifier des valeurs extrêmes
 * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
-lister_vals_extremes s04q32 
+lister_vals_extremes s04q32 if (`condit_4b') 
 
 
 * ----------------------------------------------------------------------------
@@ -937,7 +965,7 @@ lister_vals_extremes s04q32
 * Identifier des valeurs manquantes
 * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
-check_if_miss s04q33 
+check_if_miss s04q33 if (`condit_4b') 
 
 * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 * Valider les réponses
@@ -1020,7 +1048,7 @@ lister_vals_extremes s04q34 if (s04q33==1)
 * Identifier des valeurs manquantes
 * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
-check_if_miss s04q36 
+check_if_miss s04q36 if (`condit_4b') 
 
 * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 * Valider les réponses
@@ -1038,7 +1066,7 @@ check_if_miss s04q36
 * Identifier des valeurs extrêmes
 * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
-lister_vals_extremes s04q36 
+lister_vals_extremes s04q36 if (`condit_4b') 
 
 
 * ----------------------------------------------------------------------------
@@ -1053,7 +1081,7 @@ lister_vals_extremes s04q36
 * Identifier des valeurs manquantes
 * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
-check_if_miss s04q37 
+check_if_miss s04q37 if (`condit_4b') 
 
 * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 * Valider les réponses
@@ -1071,7 +1099,7 @@ check_if_miss s04q37
 * Identifier des valeurs extrêmes
 * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
-lister_vals_extremes s04q37 
+lister_vals_extremes s04q37 if (`condit_4b') 
 
 
 * ----------------------------------------------------------------------------
@@ -1095,7 +1123,7 @@ lister_vals_extremes s04q37
 * Identifier des valeurs manquantes
 * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
-check_if_miss s04q39 
+check_if_miss s04q39 if (`condit_4b') 
 
 * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 * Valider les réponses
@@ -1384,7 +1412,7 @@ check_if_miss s04q49_unite if (s04q49>0 & s04q49!=9999)
 * Identifier des valeurs manquantes
 * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
-check_if_miss s04q50 
+check_if_miss s04q50 if (`condit_4b') 
 
 * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 * Valider les réponses
