@@ -11,8 +11,8 @@ merge 1:1 interview__id interview__key s02q00a using "$raw_menage/$s02", keep(1 
 
 * ne retenir que les observations d'intérêt
 keep if inlist(s00q08, 1, 2)
-local membre_du_menage "((preload_pid != . & s01q00a == 1) | (preload_pid == .)) | (s01q12 == 1 | s01q13 == 1)"
-keep if ((AgeAnnee >= 3) & (`membre_du_menage'))
+global membre_du_menage "((preload_pid != . & s01q00a == 1) | (preload_pid == .)) | (s01q12 == 1 | s01q13 == 1)"
+keep if ((AgeAnnee >= 3) & ($membre_du_menage))
 
 * ============================================================================
 * Apurer les données
