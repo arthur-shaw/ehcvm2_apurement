@@ -1480,7 +1480,7 @@ restore
 * section 4c
 preserve
 
-    keep `s4_id_vars' s04q51a - s04q50b s04q64_controle__*
+    keep `s4_id_vars' s04q51a - s04q64_unite s04q64_controle__*
     save "$clean_menage/$s04b", replace
 
 restore
