@@ -13,6 +13,11 @@
 * programmes de service
 global progs        "$proj_dir/progs/"
 
+* données SuSo
+global suso         "$proj_dir/data/suso/"
+global suso_menage  "$suso/menage/"
+global suso_comm    "$suso/communautaire/"
+
 * données brutes
 global raw          "$proj_dir/data/raw/"
 global raw_menage   "$raw/menage/"
