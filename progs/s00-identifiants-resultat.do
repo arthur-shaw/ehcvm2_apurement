@@ -5,7 +5,7 @@ log using "$proj_dir/s00.log", replace
 * ============================================================================
 
 * charger les données
-use "$brute/$s00", clear
+use "$raw_menage/$s00", clear
 
 * ne retenir que les observations d'intérêt
 keep if inlist(s00q08, 1, 2)
