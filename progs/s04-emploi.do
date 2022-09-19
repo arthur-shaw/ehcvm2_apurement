@@ -7,6 +7,8 @@ use "$raw_menage/$s04a", clear
 merge 1:1 interview__id interview__key using "$raw_menage/membres.dta", keepusing(AgeAnnee) keep(1 3) nogen
 merge 1:1 interview__id interview__key using "$raw_menage/$s04b", nogen
 merge 1:1 interview__id interview__key using "$raw_menage/$s04c", nogen
+merge 1:1 interview__id interview__key using "$raw_menage/$s04b", nogen keep(1 3)
+merge 1:1 interview__id interview__key using "$raw_menage/$s04c", nogen keep(1 3)
 
 * ne retenir que les observations d'intérêt
 keep if inlist(s00q08, 1, 2)
