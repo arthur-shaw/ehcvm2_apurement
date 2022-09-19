@@ -8,7 +8,7 @@ log using "$proj_dir/s01.log", replace
 use "$raw_menage/$s01", clear
 merge m:1 interview__id interview__key using "$raw_menage/$s00", keepusing(s00q08) keep(1 3) nogen
 
-* ne retenir que les observations d'intér^êt
+* ne retenir que les observations d'intérêt
 keep if inlist(s00q08, 1, 2)
 
 * ============================================================================
