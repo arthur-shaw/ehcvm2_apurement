@@ -922,4 +922,20 @@ check_if_miss s01q12
 
 save "$clean_menage/$s01", replace
 
+* ============================================================================
+* Sauvegarder des variables de base pour les membres
+* ============================================================================
+
+* préparer les identifiants pour chaque section individu
+foreach var in s01q00_a s02q00a s03q00a s04q00a s05q00a s06q00a s07aq00a {
+    capture clonevar `var' = membres__id
+}
+
+* retenir les variables clé
+keep $vars_cle_membre
+
+* sauvegarder comme sortie
+save "$clean_menage/$membres_cle", replace
+
+
 log close

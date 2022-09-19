@@ -439,12 +439,6 @@ check_if_miss s00q08
 check_if_miss s00q09 if (s00q08==3)
 
 
-
-
-
-
-
-
 * ----------------------------------------------------------------------------
 * VARIABLE : s00q27 
 * ÉTIQUETTE : 0.27. Résultat du questionnaire
@@ -461,10 +455,21 @@ check_if_miss s00q09 if (s00q08==3)
 check_if_miss s00q27 
 
 
+* ============================================================================
+* Sauvegarder le résultat
+* ============================================================================
 
+save "$clean_menage/$s00", replace
 
+* ============================================================================
+* Sauvegarder des variables de base pour les entretiens
+* ============================================================================
 
+* retenir les variables clé
+keep $vars_cle_menage
 
+* sauvegarder comme sortie
+save "$clean_menage/$menages_cle", replace
 
 
 log close
