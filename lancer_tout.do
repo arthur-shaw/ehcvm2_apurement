@@ -31,7 +31,7 @@ Exécuter les programmes d'apurement
 -----------------------------------------------------------------------------*/
 
 * section 0
-di "$progs/s00-identifiants-resultat.do"
+do "$progs/s00-identifiants-resultat.do"
 
 * section 1: composition du ménage
 do "$progs/s01-membres.do"
@@ -42,7 +42,7 @@ do "$progs/s02-education.do"
 * [TODO: insérer d'autres programmes, au besoin]
 
 * section 4: emploi
-do "$progs/s02-emploi.do"
+do "$progs/s04-emploi.do"
 
 * section 7b: consommation alimentaire
 do "$progs/s07b-conso-alimentaire.do"
