@@ -399,7 +399,7 @@ check_if_miss s11q19_autre if (s11q19==8)
 * compter
 qui: count if (s11q19==8)
 local n_oth = r(N)
-di as result 'Variable -s11q19_autre- a `n_oth' valeurs autre'
+di as result "Variable -s11q19_autre- a `n_oth' valeurs autre"
 
 * identifier des opportunités de reclasser
 list interview__id s11q19_autre if (s11q19==8)
