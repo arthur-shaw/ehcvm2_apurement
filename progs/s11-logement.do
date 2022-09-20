@@ -1019,7 +1019,7 @@ check_if_miss s11q51b if (s11q51a>0)
 * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 qui: d s11q52__*, varlist
-local  = r(varlist)
+local s11q52_var = r(varlist)
 
 foreach s11q52_var of local s11q52_vars {
     check_if_miss `s11q52_var' 
