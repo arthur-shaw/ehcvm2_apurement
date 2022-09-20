@@ -112,7 +112,7 @@ check_if_miss s07bq03a
 * Identifier des valeurs extrêmes
 * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
-lister_vals_extremes s07bq03a 
+lister_vals_extremes s07bq03a, by(s07bq01 s07bq03b s07bq03c)
 
 
 * ----------------------------------------------------------------------------
@@ -377,7 +377,7 @@ check_if_miss s07bq07a if (inlist(s07bq06, 1,2,3))
 * Identifier des valeurs extrêmes
 * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
-lister_vals_extremes s07bq07a if (inlist(s07bq06, 1,2,3))
+lister_vals_extremes s07bq07a if (inlist(s07bq06, 1,2,3)), by(s07bq01 s07bq07b s07bq07c)
 
 
 * ----------------------------------------------------------------------------
@@ -514,8 +514,16 @@ check_if_miss s07bq08 if (inlist(s07bq06, 1,2,3))
 * Identifier des valeurs extrêmes
 * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
-lister_vals_extremes s07bq08 if (inlist(s07bq06, 1,2,3))
+lister_vals_extremes s07bq08 if (inlist(s07bq06, 1,2,3)), by(s07bq01 s07bq07b s07bq07c)
 
+
+* ----------------------------------------------------------------------------
+* OBJECTIF: contrôler le prix unitaire
+* ----------------------------------------------------------------------------
+
+gen prix_unitaire = s07bq08 / s07bq07a
+
+lister_vals_extremes prix_unitaire if (inlist(s07bq06, 1,2,3)), by(s07bq01 s07bq07b s07bq07c)
 
 * ============================================================================
 * Sauvegarder le résultat
