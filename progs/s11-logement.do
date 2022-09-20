@@ -99,7 +99,12 @@ lister_vals_extremes s11q02
 * Identifier des valeurs manquantes
 * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
-check_if_miss s11q03 
+qui: d s11q03__*, varlist
+local s11q03_vars = r(varlist)
+
+foreach s11q03_var of local s11q03_vars {
+    check_if_miss `s11q03_var' 
+}
 
 
 * ----------------------------------------------------------------------------
