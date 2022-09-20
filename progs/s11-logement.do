@@ -198,7 +198,10 @@ s11q05>0
 * Identifier des valeurs extrêmes
 * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
+* globalement
 lister_vals_extremes s11q05 if (s11q04!=5)
+* par strate
+lister_vals_extremes s11q05 if (s11q04!=5), by(s00q01 s00q04)
 
 
 * ----------------------------------------------------------------------------
@@ -243,7 +246,10 @@ s11q06>0
 * Identifier des valeurs extrêmes
 * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
+* globalement
 lister_vals_extremes s11q06 if (s11q04==5)
+* par strate
+lister_vals_extremes s11q06 if (s11q04==5), by(s00q01 s00q04)
 
 
 * ----------------------------------------------------------------------------
@@ -304,8 +310,10 @@ s11q09>0
 * Identifier des valeurs extrêmes
 * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
+* globalement
 lister_vals_extremes s11q09 if (s11q07==1)
-
+* par strate
+lister_vals_extremes s11q09 if (s11q07==1), by(s00q01 s00q04)
 
 * ----------------------------------------------------------------------------
 * VARIABLE : s11q18 
@@ -515,8 +523,10 @@ check_if_miss s11q23a if (s11q22==2 & inlist(s11q04, 6,7,8) | s11q21==1 & !inlis
 * Identifier des valeurs extrêmes
 * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
+* globalement
 lister_vals_extremes s11q23a if (s11q22==2 & inlist(s11q04, 6,7,8) | s11q21==1 & !inlist(s11q04, 6,7,8))
-
+* par strate
+lister_vals_extremes s11q23a if (s11q22==2 & inlist(s11q04, 6,7,8) | s11q21==1 & !inlist(s11q04, 6,7,8)), by(s00q01 s00q04)
 
 * ----------------------------------------------------------------------------
 * VARIABLE : s11q23b 
@@ -593,7 +603,10 @@ s11q25>0
 * Identifier des valeurs extrêmes
 * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
+* globalement
 lister_vals_extremes s11q25 if (s11q24==1)
+* par strate
+lister_vals_extremes s11q25 if (s11q24==1), by(s00q01 s00q04)
 
 
 * ----------------------------------------------------------------------------
@@ -808,7 +821,10 @@ s11q36a>0
 * Identifier des valeurs extrêmes
 * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
+* globalement
 lister_vals_extremes s11q36a if (s11q33==3 | !inlist(s11q04, 6,7,8) & inlist(s11q33, 1,2) | inlist(s11q04, 6,7,8) & s11q34==2)
+* par strate
+lister_vals_extremes s11q36a if (s11q33==3 | !inlist(s11q04, 6,7,8) & inlist(s11q33, 1,2) | inlist(s11q04, 6,7,8) & s11q34==2), by(s00q01 s00q04)
 
 
 * ----------------------------------------------------------------------------
@@ -978,7 +994,10 @@ s11q51a>0
 * Identifier des valeurs extrêmes
 * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
+* globalement
 lister_vals_extremes s11q51a if (s11q50==2 & inlist(s11q04, 6,7,8) | s11q49==1 & !inlist(s11q04, 6,7,8))
+* par strate
+lister_vals_extremes s11q51a if (s11q50==2 & inlist(s11q04, 6,7,8) | s11q49==1 & !inlist(s11q04, 6,7,8)), by(s00q01 s00q04)
 
 
 * ----------------------------------------------------------------------------
