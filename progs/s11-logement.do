@@ -5,7 +5,8 @@ log using "$proj_dir/s11.log", replace
 * ============================================================================
 
 * charger les données
-use "$raw_menage/$s11", clear
+use "$clean_menage/$menages_cle", clear
+merge 1:1 interview__id interview__key using "$raw_menage/$s11",  keep(1 3) nogen
 
 * ne retenir que les observations d'intérêt
 keep if inlist(s00q08, 1, 2)

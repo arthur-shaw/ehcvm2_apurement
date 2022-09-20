@@ -5,7 +5,8 @@ log using "$proj_dir/s09.log", replace
 * ============================================================================
 
 * charger les données
-use "$raw_menage/$s09a", clear
+use "$clean_menage/$menages_cle", clear
+merge 1:m interview__id interview__key using "$raw_menage/$s09a",  keep(1 3) nogen
 
 * ne retenir que les observations d'intérêt
 keep if inlist(s00q08, 1, 2)
@@ -211,7 +212,8 @@ save "$clean_menage/$s09a", replace
 * ============================================================================
 
 * charger les données
-use "$brute/$s09b", clear
+use "$clean_menage/$menages_cle", clear
+merge 1:m interview__id interview__key using "$raw_menage/$s09b",  keep(1 3) nogen
 
 * ne retenir que les observations d'intérêt
 keep if inlist(s00q08, 1, 2)
@@ -278,7 +280,8 @@ save "$clean_menage/$s09b", replace
 * ============================================================================
 
 * charger les données
-use "$brute/$s09c", clear
+use "$clean_menage/$menages_cle", clear
+merge 1:m interview__id interview__key using "$raw_menage/$s09c",  keep(1 3) nogen
 
 * ne retenir que les observations d'intérêt
 keep if inlist(s00q08, 1, 2)
@@ -344,7 +347,8 @@ save "$clean_menage/$s09c", replace
 * ============================================================================
 
 * charger les données
-use "$brute/$s09d", clear
+use "$clean_menage/$menages_cle", clear
+merge 1:m interview__id interview__key using "$raw_menage/$s09d",  keep(1 3) nogen
 
 * ne retenir que les observations d'intérêt
 keep if inlist(s00q08, 1, 2)
@@ -410,7 +414,8 @@ save "$clean_menage/$s09d", replace
 * ============================================================================
 
 * charger les données
-use "$brute/$s09e", clear
+use "$clean_menage/$menages_cle", clear
+merge 1:m interview__id interview__key using "$raw_menage/$s09e",  keep(1 3) nogen
 
 * ne retenir que les observations d'intérêt
 keep if inlist(s00q08, 1, 2)
@@ -476,7 +481,8 @@ save "$clean_menage/$s09e", replace
 * ============================================================================
 
 * charger les données
-use "$brute/$s09f", clear
+use "$clean_menage/$menages_cle", clear
+merge 1:m interview__id interview__key using "$raw_menage/$s09f",  keep(1 3) nogen
 
 * ne retenir que les observations d'intérêt
 keep if inlist(s00q08, 1, 2)
