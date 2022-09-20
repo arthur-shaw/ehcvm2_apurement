@@ -25,34 +25,24 @@ keep if inlist(s00q08, 1, 2)
 
 #delim;
 local condition_autre "
-// produits: autres céréales, autres farines de céréales, autres semoules de céréales
 inlist(s07bq01,11,18, 19) |
 
-// Autre volaille sur pied, Autres viandes non-déclarées ailleurs
 inlist(s07bq01,39, 171) |
 
-// Autres fruits de mer
 (s07bq01 == 50) |
 
-// Autres huiles n.d.a. (maïs, huile palmiste, huile d'olive, huile de tournesol, huile de lait de vache etc.)
 (s07bq01 == 70) |
 
-// Autres produits laitiers
-(@s07bq01 == 59) |
+(s07bq01 == 59) |
 
-// Autres agrumes, Autres fruits (tamarin noir, liane sauvage, raisin, fraise, pomme sauvage, etc.)
 inlist(s07bq01,75, 87) |
 
-// Autres légumes en feuilles, Autre légumes frais n.d.a
 inlist(s07bq01,106,107) |
 
-// Autres légumes secs n.d.a, Autres tubercules n.d.a
 inlist(s07bq01,111, 129) |
 
-// Autres vinaigres, Autres condiments (poivre etc.), Autres produits alimentaires (noix de pomme sauvage)
 inlist(s07bq01,149,152, 154) |
 
-// Autres tisanes et infusions n.d.a. (quinquelibat, citronelle, etc.)
 (s07bq01 == 159)
 ";
 #delim cr
@@ -210,89 +200,48 @@ check_if_miss s07bq03c
 
 #delim;
 local aucune_production "
-/* CÉRÉALES */
-
 (
-// riz importé
 s07bq01 != 3 &
 s07bq01 != 4 &
-
-// pâtes alimentaires
 s07bq01 != 20
 )
 
 &
 
-/* VIANDES */
-
-/* POISSON */
-
-/* HUILES */
-
-/* PRODUITS LAITIERS */
-
 (
-// lait concentré sucré
 s07bq01 != 54 &
-// lait concentré non-sucré
 s07bq01 != 55
 )
 
 &
 
-/* FRUITS */
-
-/* LÉGUMES  */
-
-// concentré de tomate
 s07bq01 != 91
 
 &
 
-/* LÉGUMINEUSES */
-
-/* SUCRERIES */
-
 (
-// Sucre poudre
 s07bq01 != 129 &
-// Sucre morceaux
 s07bq01 != 130 &
-// Chocolat à croquer, pâte à tartiner
 s07bq01 != 132
 )
 
 &
 
-/* ÉPICES */
-
 (
-// Cube alimentaire
 s07bq01 != 139 &
-// Arôme
 s07bq01 != 140
 )
 
 &
 
-/* boissons */
-
 (
-// Café en en poudre
 s07bq01 != 149 &
-// Café soluble
 s07bq01 != 150 &
-// Thé en boite ou en sachet
 s07bq01 != 151 &
-// Chocolat en poudre
 s07bq01 != 152 &
-// Eau minérale
 s07bq01 != 155 &
-// BOISSONS gazeuses
 s07bq01 != 156 &
-// Jus en poudre
 s07bq01 != 157 &
-// Bières industrielles
 s07bq01 != 159
 )
 ";
