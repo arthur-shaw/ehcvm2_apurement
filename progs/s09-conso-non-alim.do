@@ -47,7 +47,7 @@ check_if_miss s09aq03
 * Identifier des valeurs extrêmes
 * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
-lister_vals_extremes s09aq03 
+lister_vals_extremes s09aq03, by(s09aq01) 
 
 
 * ----------------------------------------------------------------------------
@@ -265,7 +265,7 @@ s09Bq03>0
 * Identifier des valeurs extrêmes
 * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
-lister_vals_extremes s09bq03 
+lister_vals_extremes s09bq03, by(s09bq01) 
 
 
 * ============================================================================
@@ -332,7 +332,7 @@ s09Cq03>0
 * Identifier des valeurs extrêmes
 * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
-lister_vals_extremes s09cq03 
+lister_vals_extremes s09cq03, by(s09cq01) 
 
 
 * ============================================================================
@@ -399,7 +399,7 @@ s09Dq03>0
 * Identifier des valeurs extrêmes
 * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
-lister_vals_extremes s09dq03 
+lister_vals_extremes s09dq03, by(s09dq01) 
 
 
 * ============================================================================
@@ -466,7 +466,7 @@ s09Eq03>0
 * Identifier des valeurs extrêmes
 * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
-lister_vals_extremes s09eq03 
+lister_vals_extremes s09eq03, by(s09eq01) 
 
 
 * ============================================================================
@@ -530,7 +530,7 @@ s09Fq03>0
 * Identifier des valeurs extrêmes
 * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
-lister_vals_extremes s09fq03 
+lister_vals_extremes s09fq03, by(s09fq01) 
 
 
 * ============================================================================
